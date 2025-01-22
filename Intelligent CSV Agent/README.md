@@ -94,4 +94,5 @@ Special thanks to the tools and frameworks that made this project possible:
 - **Pandas**: For powerful data manipulation capabilities.
 - **VectorShift**: For providing a reliable platform to design and host AI pipelines.
 
-Case developed by Raihan Karim for Passionfruit. © 2025 Raihan Karim. All rights reserved.
+
+*Case developed by Raihan Karim for Passionfruit. © 2025 Raihan Karim. All rights reserved.*
