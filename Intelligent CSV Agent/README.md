@@ -1,7 +1,7 @@
-# CSV Agent
+# Intelligent CSV Agent
 
 ## Overview
-The **CSV Agent** is a robust and user-friendly tool designed to simplify CSV file processing and facilitate seamless interaction with advanced language models (LLMs). It excels in scenarios where users need to clean, process, and normalize complex CSV datasets, enabling these datasets to be queried efficiently by cutting-edge LLMs. This tool is particularly valuable for projects requiring fast, accurate data retrieval and intelligent decision-making, such as data-driven research, automated reporting, and dynamic knowledge querying. This application allows users to process delimited CSV files and provides an embedded interface for querying a pipeline created with advanced AI tools. It is ideal for developers, data scientists, and AI enthusiasts looking to work with LLMs efficiently and effectively.
+The **Intelligent CSV Agent** is a robust and user-friendly tool designed to simplify CSV file processing and facilitate seamless interaction with advanced language models (LLMs). It excels in scenarios where users need to clean, process, and normalize complex CSV datasets, enabling these datasets to be queried efficiently by cutting-edge LLMs. This tool is particularly valuable for projects requiring fast, accurate data retrieval and intelligent decision-making, such as data-driven research, automated reporting, and dynamic knowledge querying. This application allows users to process delimited CSV files and provides an embedded interface for querying a pipeline created with advanced AI tools. It is ideal for developers, data scientists, and AI enthusiasts looking to work with LLMs efficiently and effectively.
 
 ## Features
 ### CSV Processor
