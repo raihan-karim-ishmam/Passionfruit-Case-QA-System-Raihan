@@ -15,6 +15,9 @@ The repository includes four implementations of the CSV Q&A system, each explori
 
 ### **Version 1: Intelligent CSV Agent (VectorShift)**
 - **Methodology**: Utilizes VectorShift's pipeline-based approach for fast, accurate data retrieval.
+
+![alt text](<V1 Q2.png>)
+
 - **Strengths**:
   - Pre-built pipeline ensures seamless integration and high performance.
   - SDKs provide extensive customization options for advanced workflows.
@@ -22,20 +25,11 @@ The repository includes four implementations of the CSV Q&A system, each explori
 - **Performance**: Covers almost all use cases effectively, delivering 100% working results.
 - **Future Work**: Integrate VectorShift SDK for more control over pipeline components.
 
-### **Version 2: Open Source Llama CSV Agent**
-- **Methodology**: Leverages the open-source Llama 2 model to build a fully customizable agent.
-- **Strengths**:
-  - Offers complete ownership and the potential for patentable solutions.
-  - Entirely open-source, eliminating dependencies on third-party tools.
-- **Challenges**:
-  - Due to hardware and time constraints, the model was run in GGML format on a CPU, requiring data chunking, which reduced context and accuracy.
-  - Performance was poor due to the loss of semantic connections in chunked data.
-- **Future Work**:
-  - Use the original Llama 2 model with GPU integration to eliminate chunking and restore full context.
-  - Scale the solution to production-level infrastructure.
-
-### **Version 3: Pandas AI with Bamboo LLM**
+### **Version 2: Pandas AI with Bamboo LLM**
 - **Methodology**: Integrates the PandasAI library with Bamboo LLM for natural language queries on tabular data.
+
+![alt text](<V2.1 Q3.png>)
+
 - **Strengths**:
   - Highly effective for direct, data-focused queries.
   - Advanced features like training and default response customization for future use.
@@ -47,8 +41,11 @@ The repository includes four implementations of the CSV Q&A system, each explori
   - Implement advanced configurations like metadata indexing and training for personalized responses.
   - Extend integration with other LLMs to improve versatility.
 
-### **Version 4: OpenAI and LangChain CSV Agent**
+### **Version 3: OpenAI and LangChain CSV Agent**
 - **Methodology**: Combines OpenAI's GPT models with LangChain for a widely known, reliable solution.
+
+![alt text](<V3 Q8.png>)
+
 - **Strengths**:
   - GPT-3.5 Turbo delivers fast and highly accurate results, even for external data-based questions.
   - Simple and cost-effective for real-time applications.
@@ -58,6 +55,21 @@ The repository includes four implementations of the CSV Q&A system, each explori
 - **Future Work**:
   - Enhance with function calling for querying external datasets.
   - Implement source referencing to provide transparency in responses.
+
+### **Version 4: Open Source Llama CSV Agent**
+- **Methodology**: Leverages the open-source Llama 2 model to build a fully customizable agent.
+
+![alt text](<V4 Q6.png>)
+
+- **Strengths**:
+  - Offers complete ownership and the potential for patentable solutions.
+  - Entirely open-source, eliminating dependencies on third-party tools.
+- **Challenges**:
+  - Due to hardware and time constraints, the model was run in GGML format on a CPU, requiring data chunking, which reduced context and accuracy.
+  - Performance was poor due to the loss of semantic connections in chunked data.
+- **Future Work**:
+  - Use the original Llama 2 model with GPU integration to eliminate chunking and restore full context.
+  - Scale the solution to production-level infrastructure.
 
 ---
 
@@ -93,9 +105,9 @@ These planned improvements aim to deliver a highly scalable, flexible, and user-
 
 ### Specific Improvements
 - **Version 1 (VectorShift)**: Use SDKs to customize the pipeline.
-- **Version 2 (Llama 2)**: Remove chunking and leverage GPU-based processing.
-- **Version 3 (Pandas AI)**: Explore training and advanced configurations for tailored responses.
-- **Version 4 (OpenAI)**: Add source referencing and function calling for extended data integration.
+- **Version 2 (Pandas AI)**: Explore training and advanced configurations for tailored responses.
+- **Version 3 (OpenAI)**: Add source referencing and function calling for extended data integration.
+- **Version 4 (Llama 2)**: Remove chunking and leverage GPU-based processing.
 
 ---
 
