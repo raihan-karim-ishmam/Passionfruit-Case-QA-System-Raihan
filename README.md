@@ -1,88 +1,112 @@
-# Case Study: CSV-Based Q&A System
+# Passionfruit CSV Q&A System
 
 ## Overview
-This repository was developed as part of a case study assignment to create a **CSV-based Q&A system**. The system allows users to query a CSV file, retrieve answers, and handle errors effectively. The project expands upon the initial requirements by delivering **two distinct implementations**:
+The **Passionfruit CSV Q&A System** is a proof-of-concept (POC) project developed to address the challenges of querying complex CSV datasets using advanced language models (LLMs). With four distinct implementations, this system explores different methodologies for intelligent Q&A systems, highlighting flexibility, performance, and future scalability. Each version of the system demonstrates a unique approach to solving the problem, tailored to specific strengths and use cases.
 
-1. **Intelligent CSV Agent featuring VectorShift**: Focused on accuracy and efficiency.
-2. **LLM-Based CSV Q&A System featuring Llama 2**: Built with open-source components for full customizability.
+### Motivation
+The POC was developed under strict constraints, including time limitations, lack of direct user contact, and limited access to stakeholders. Despite these challenges, the goal was to demonstrate creativity, technical proficiency, and adaptability. Special appreciation goes to the assignment and case design, which was exceptionally well-structured and clearly described, making it an enjoyable and insightful challenge to work on. The approaches are designed to offer a comprehensive view of various Q&A system methodologies while showcasing potential areas for improvement and scalability.
 
-Both implementations demonstrate different approaches to solving the case, providing versatility and insight into advanced language model (LLM) workflows.
+
+
+## Versions
+The repository includes four implementations of the CSV Q&A system, each exploring a different method:
+
+
+
+### **Version 1: Intelligent CSV Agent (VectorShift)**
+- **Methodology**: Utilizes VectorShift's pipeline-based approach for fast, accurate data retrieval.
+- **Strengths**:
+  - Pre-built pipeline ensures seamless integration and high performance.
+  - SDKs provide extensive customization options for advanced workflows.
+  - Minimal coding effort required, enabling a focus on pipeline architecture and infrastructure.
+- **Performance**: Covers almost all use cases effectively, delivering 100% working results.
+- **Future Work**: Integrate VectorShift SDK for more control over pipeline components.
+
+### **Version 2: Open Source Llama CSV Agent**
+- **Methodology**: Leverages the open-source Llama 2 model to build a fully customizable agent.
+- **Strengths**:
+  - Offers complete ownership and the potential for patentable solutions.
+  - Entirely open-source, eliminating dependencies on third-party tools.
+- **Challenges**:
+  - Due to hardware and time constraints, the model was run in GGML format on a CPU, requiring data chunking, which reduced context and accuracy.
+  - Performance was poor due to the loss of semantic connections in chunked data.
+- **Future Work**:
+  - Use the original Llama 2 model with GPU integration to eliminate chunking and restore full context.
+  - Scale the solution to production-level infrastructure.
+
+### **Version 3: Pandas AI with Bamboo LLM**
+- **Methodology**: Integrates the PandasAI library with Bamboo LLM for natural language queries on tabular data.
+- **Strengths**:
+  - Highly effective for direct, data-focused queries.
+  - Advanced features like training and default response customization for future use.
+  - Free tier supports initial development and experimentation.
+- **Challenges**:
+  - Struggles with complex, reasoning-heavy questions.
+  - Limited scope for handling queries requiring external context.
+- **Future Work**:
+  - Implement advanced configurations like metadata indexing and training for personalized responses.
+  - Extend integration with other LLMs to improve versatility.
+
+### **Version 4: OpenAI and LangChain CSV Agent**
+- **Methodology**: Combines OpenAI's GPT models with LangChain for a widely known, reliable solution.
+- **Strengths**:
+  - GPT-3.5 Turbo delivers fast and highly accurate results, even for external data-based questions.
+  - Simple and cost-effective for real-time applications.
+- **Challenges**:
+  - Initial design tokenized the entire CSV file for each query, incurring high costs.
+  - Post-debugging, the workflow was optimized to upload the CSV once, but further features could not be implemented due to time constraints.
+- **Future Work**:
+  - Enhance with function calling for querying external datasets.
+  - Implement source referencing to provide transparency in responses.
 
 ---
 
-## Case Study Requirements
-The project aimed to:
-- Create a **Q&A system** capable of reading a CSV file and answering user questions.
-- Optimize the CSV file for processing by normalizing columns and handling inconsistencies.
-- Integrate an LLM for accurate question-answering, while managing token and memory limitations.
+## Data Preprocessing
 
-The original dataset was a **food database** containing:
-- Food names (both in Dutch and English).
-- Food types and categories.
-- Energy content (in kcal) and other nutritional information.
+These preprocessing steps ensured that unconventional CSV formats were compatible with LLMs and improved overall system performance.Preprocessing was critical for all versions due to the unconventional format of the CSV file. Steps included:
+- **Delimiter Normalization**: Converted unusual delimiters (e.g., `|`) into standard commas for LLM compatibility.
+- **Row Normalization**: Ensured consistent column lengths by filling missing values where appropriate.
+- **Error Handling**: Managed mixed numerical and text data to maintain data integrity.
+
+These steps improved LLM performance and ensured compatibility across all implementations.
 
 ---
 
-## Two Implementations
-
-### **1. Intelligent CSV Agent featuring VectorShift**
-- **Goal**: Provide an efficient and modular CSV processing system integrated with advanced LLMs.
-- **Key Features**:
-  - Robust CSV normalization and error handling.
-  - Query pipeline using **VectorShift**, ensuring accurate and contextual responses.
-  - Modular design implemented using **Streamlit**.
-- **Details**: Refer to the `Intelligent CSV Agent` directory for more information.
-
-### **2. LLM-Based CSV Q&A System featuring Llama 2**
-- **Goal**: Leverage open-source tools for a fully autonomous system without external dependencies.
-- **Key Features**:
-  - Local inference using **Llama 2** (in GGML format).
-  - Vectorization with **HuggingFace Embeddings** and storage in a **FAISS vector store**.
-  - Interactive querying via a **Conversational Retrieval Chain**.
-- **Details**: Refer to the `LLM-Based CSV Q&A System` directory for more information.
-
 ---
 
-## Installation and Setup
+## Examples
 
-### Clone the Repository
-```bash
-git clone <repository-url>
-cd <repository-directory>
-```
-
-### Install Dependencies
-Ensure all required Python libraries are installed for each of the two directories:
-```bash
-pip install -r requirements.txt
-```
-
-### Explore Each Implementation
-Navigate to the respective directories (`Intelligent CSV Agent V1.0` or `Llama Based Q&A System V2.0`) for detailed setup instructions and feature highlights.
-
+An `examples` folder is included in the repository, showcasing successful outcomes generated by the system. These examples demonstrate practical use cases and the utility of the implemented approaches, offering valuable insights into how each version performs.
 ---
 
-## Key Highlights
-1. **Two Distinct Approaches**:
-   - The **VectorShift-based model** excels in accuracy and modularity.
-   - The **Llama 2-based model** demonstrates the feasibility of a fully open-source solution.
+## Future Enhancements
 
-2. **Scalable Design**:
-   - Both systems are designed to handle CSV data efficiently and support future enhancements.
+These planned improvements aim to deliver a highly scalable, flexible, and user-focused solution, enhancing the practicality and adaptability of the Q&A system.
+### Common Goals for All Versions
+1. **Cloud Integration**:
+   - Migrate data storage and processing to Azure or other cloud platforms for scalability.
+2. **Metadata Indexing**:
+   - Introduce metadata indexing to improve query efficiency and accuracy for tabular data.
+3. **User Personalization**:
+   - Enable personalized agent configurations for specific company requirements.
+4. **Enhanced Interfaces**:
+   - Develop branded and user-friendly interfaces for better user engagement.
 
-3. **Future Improvements**:
-   - Integration of web-sourced answers for enhanced knowledge.
-   - Migration to a cloud-based infrastructure for better scalability.
+### Specific Improvements
+- **Version 1 (VectorShift)**: Use SDKs to customize the pipeline.
+- **Version 2 (Llama 2)**: Remove chunking and leverage GPU-based processing.
+- **Version 3 (Pandas AI)**: Explore training and advanced configurations for tailored responses.
+- **Version 4 (OpenAI)**: Add source referencing and function calling for extended data integration.
 
 ---
 
 ## Acknowledgments
-This project is a demonstration of innovation in AI and showcases the use of tools like:
-- **Streamlit**: For an intuitive user interface.
-- **LangChain**: For conversational AI workflows.
-- **FAISS**: For vector storage and retrieval.
-- **Meta Llama 2**: For powering open-source LLM capabilities.
+- **VectorShift**: For providing a robust pipeline for fast data retrieval.
+- **OpenAI**: For delivering state-of-the-art GPT models.
+- **LangChain**: For enabling seamless integration of language models.
+- **PandasAI**: For advancing tabular data management and query capabilities.
 
+---
 
+*Case developed by Raihan Karim for Passionfruit. © 2025 Raihan Karim. All rights reserved.*
 
-*Developed by Raihan Karim for Passionfruit. © 2025 Raihan Karim. All rights reserved.*
